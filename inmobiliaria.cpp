@@ -1,8 +1,6 @@
 #include<iostream>
 #include<windows.h>
-#include"Departamentos.h"
-#include"Casas.h"
-#include"Oficinas.h"
+#include"Inmobiliaria.h"
 using namespace std;
 
 int main(){
@@ -11,8 +9,8 @@ int main(){
         cout<<"Introducir pisos nuevos del departamento 1"<<endl;
         int pisos_nuevo;
         cin>>pisos_nuevo;
-        d_1.setPisos(pisos_nuevo);
-        cout<<"El departamento 1 tiene: "<<d_1.getPisos()<<" pisos."<<endl;
+        d_1.setHabitaciones(pisos_nuevo);
+        cout<<"El departamento 1 tiene: "<<d_1.getHabitaciones()<<" pisos."<<endl;
 
     //Casas(int _plantas, int _size, int _habitaciones, int _precio)
     Casas c_1 = Casas(2,100,3,150000);
