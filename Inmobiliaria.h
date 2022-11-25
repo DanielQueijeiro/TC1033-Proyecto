@@ -16,9 +16,9 @@ class Departamentos: public Edificio{
         bool terraza;
     public:
         //Constructores
-        Departamentos(int _terraza, int _cocina, int _habitaciones, int _baños):Edificio(0,0,0){
+        Departamentos(bool _terraza, int _habitaciones, int _baños):Edificio(0,0,0){
             terraza = _terraza;
-            cocina = _cocina;
+
             baños = _baños;
             habitaciones = _habitaciones;
         }
@@ -27,26 +27,21 @@ class Departamentos: public Edificio{
             int _terraza = terraza;
             return _terraza;
         }
-        int getCocina(){
-            int _cocina = cocina;
-            return _cocina;
-        }
+
         int getBaños(){
             int _baños = baños;
             return _baños;
         }
+        
         int getHabitaciones(){
             int _habitaciones = habitaciones;
             return _habitaciones;
         }
         //Setters
-        void setTerraza(int nuevoTerraza){
+        void setTerraza(bool nuevoTerraza){
             terraza = nuevoTerraza;
         }
 
-        void setCocina(int nuevoCocina){
-            cocina = nuevoCocina;
-        }
 
         void setBaños(int nuevoBaños){
             baños = nuevoBaños;
@@ -59,46 +54,46 @@ class Departamentos: public Edificio{
 
 class Casas: public Edificio{
     private:
-        int plantas; //Total de plantas
-        int size;//En metros cuadrados
+        int estacionamiento;
+        int baños;
         int habitaciones;
-        int precio;
+        bool sotano;
     public:
         //Constructores
-        Casas(int _plantas, int _size, int _habitaciones, int _precio): Edificio(0,0,0){
-            plantas = _plantas;
-            precio = _precio;
-            size = _size;
+        Casas(int _estacionamiento, int _baños, int _habitaciones, bool _sotano): Edificio(0,0,0){
+            estacionamiento = _estacionamiento;
+            sotano = _sotano;
+            baños = _baños;
             habitaciones = _habitaciones;
         }
         //Getters
-        int getPlantas(){
-            int _plantas = plantas;
-            return _plantas;
+        int getEstacionamiento(){
+            int _estacionamiento = estacionamiento;
+            return _estacionamiento;
         }
-        int getSize(){
-            int _size = size;
-            return _size;
+        int getBaños(){
+            int _baños = baños;
+            return _baños;
         }
-        int getPrecio(){
-            int _precio = precio;
-            return _precio;
+        bool getSotano(){
+            int _sotano = sotano;
+            return _sotano;
         }
         int getHabitaciones(){
             int _habitaciones = habitaciones;
             return _habitaciones;
         }
         //Setters
-        void setPlantas(int nuevoPlanta){
-            plantas = nuevoPlanta;
+        void setEstacionamiento(int nuevoEstacionamiento){
+            estacionamiento = nuevoEstacionamiento;
         }
 
-        void setSize(int nuevoSize){
-            size = nuevoSize;
+        void setBaños(int nuevoBaños){
+            baños = nuevoBaños;
         }
 
-        void setPrecio(int nuevoPrecio){
-            precio = nuevoPrecio;
+        void setSotano(int nuevoSotano){
+            sotano = nuevoSotano;
         }
 
         void setHabitaciones(int nuevoHabitaciones){
@@ -108,47 +103,40 @@ class Casas: public Edificio{
 
 class Oficinas:Edificio{
     private:
-        int pisos; //Total de pisos
-        int size;//En metros cuadrados;
+        bool salaConferencias;
+        int maquinasExpendedoras;
         int cubiculos;
-        int precio;
+
     public:
         //Constructores
-        Oficinas(int _pisos, int _size, int _cubiculos, int _precio):Edificio(0,0,0){
-            pisos = _pisos;
-            precio = _precio;
-            size = _size;
+        Oficinas(bool _salaConferencias, int _maquinasExpendedoras, int _cubiculos):Edificio(0,0,0){
+            salaConferencias = _salaConferencias;
+            maquinasExpendedoras = _maquinasExpendedoras;
             cubiculos = _cubiculos;
         }
         //Getters
-        int getPisos(){
-            int _pisos = pisos;
-            return _pisos;
+        bool getSalaConferencias(){
+            int _salaConferencias = salaConferencias;
+            return _salaConferencias;
         }
-        int getSize(){
-            int _size = size;
-            return _size;
-        }
-        int getPrecio(){
-            int _precio = precio;
-            return _precio;
+        int getMaquinasExpendedoras(){
+            int _maquinasExpendedoras = maquinasExpendedoras;
+            return _maquinasExpendedoras;
+
         }
         int getCubiculos(){
             int _cubiculos = cubiculos;
             return _cubiculos;
         }
         //Setters
-        void setPisos(int nuevoPisos){
-            pisos = nuevoPisos;
+        void setSalaConferencias(int nuevoSalaConferencias){
+            salaConferencias = nuevoSalaConferencias;
         }
 
-        void setSize(int nuevoSize){
-            size = nuevoSize;
+        void setMaquinasExpendedoras(int nuevoMaquinasExpendedoras){
+            maquinasExpendedoras = nuevoMaquinasExpendedoras;
         }
 
-        void setPrecio(int nuevoPrecio){
-            precio = nuevoPrecio;
-        }
 
         void setCubiculos(int nuevoHabitaciones){
             cubiculos = nuevoHabitaciones;
