@@ -13,7 +13,7 @@ int main(){
         cout<<"El departamento 1 tiene: "<<d_1.getHabitaciones()<<" pisos."<<endl;
 
     //Casas(int _plantas, int _size, int _habitaciones, int _precio)
-    Casas c_1 = Casas(2,100,3,150000);
+    Casas c_1 = Casas(2,100,3,150000); 
         cout<<endl<<"Introducir size nuevo de la casa 1"<<endl;
         int size_nuevo;
         cin>>size_nuevo;

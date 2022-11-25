@@ -1,25 +1,14 @@
 #include<stdlib.h>
+#include "Edificio.h"
 
 
 class Inmobiliaria{
     //Aqui se podra ver y cambiar los edificios
 };
 
-class Edificio{
-    private:
-        int size;
-        int precio;
-        int pisos;
-    public:
-        Edificio(int _size, int _precio, int _pisos){
-            size = _size;
-            precio = _precio;
-            pisos = _pisos;
-        }
-    //Atributos para ver y cambiar las casas, edificios y departamentos
-};
 
-class Departamentos{
+
+class Departamentos: public Edificio{
     private:
         int habitaciones;
         int baños;
@@ -27,7 +16,7 @@ class Departamentos{
         bool terraza;
     public:
         //Constructores
-        Departamentos(int _terraza, int _cocina, int _habitaciones, int _baños){
+        Departamentos(int _terraza, int _cocina, int _habitaciones, int _baños):Edificio(0,0,0){
             terraza = _terraza;
             cocina = _cocina;
             baños = _baños;
@@ -68,7 +57,7 @@ class Departamentos{
         }
 };
 
-class Casas{
+class Casas: public Edificio{
     private:
         int plantas; //Total de plantas
         int size;//En metros cuadrados
@@ -76,7 +65,7 @@ class Casas{
         int precio;
     public:
         //Constructores
-        Casas(int _plantas, int _size, int _habitaciones, int _precio){
+        Casas(int _plantas, int _size, int _habitaciones, int _precio): Edificio(0,0,0){
             plantas = _plantas;
             precio = _precio;
             size = _size;
@@ -117,7 +106,7 @@ class Casas{
         }
 };
 
-class Oficinas{
+class Oficinas:Edificio{
     private:
         int pisos; //Total de pisos
         int size;//En metros cuadrados;
@@ -125,7 +114,7 @@ class Oficinas{
         int precio;
     public:
         //Constructores
-        Oficinas(int _pisos, int _size, int _cubiculos, int _precio){
+        Oficinas(int _pisos, int _size, int _cubiculos, int _precio):Edificio(0,0,0){
             pisos = _pisos;
             precio = _precio;
             size = _size;
