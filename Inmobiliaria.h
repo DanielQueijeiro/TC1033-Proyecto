@@ -5,23 +5,20 @@ using namespace std;
 
 
 class Inmobiliaria{
-   // Aqui se podra ver y cambiar los edificios
     private:
-        Departamentos departamento;
-        Casas casa;
-        Oficinas oficina;
         vector<Edificio*> edificios;
     public:
-        void agregarEdificio(Edificio* edif){
+        Inmobiliaria(){}
+        vector<Edificio*> getEdificio(){
+            return edificios;
+        }
+        void agregarEdificio(Edificio*edif){
             edificios.push_back(edif);
-        }      
-
-        // void mostrarEdificios(){
-        //     for(int i = 0; i<edificios.size();i++){
-        //         edificios[i]->imprimeEdificio();
-        //         cout<<endl;
-        //     }
-        // }
+        }
+        void imprimirEdifificios(){
+            for(int i =0; i<edificios.size();i++)
+                edificios[i]->imprimirEdificios();
+        }
 };
 
 
@@ -74,8 +71,14 @@ class Departamentos: public Edificio{
             cout<< "Habitaciones: " << habitaciones <<endl;
             cout<< "Baños: "<< baños << endl;
             if(terraza==true){
-                cout<< "Tiene terraza"<<endl;
+                cout<< "Tiene terraza"<<endl<<endl;
             }
+            else if(terraza==false){
+                cout<<"No tiene terraza"<<endl<<endl;
+            }
+        }
+        void imprimirse(){
+            cout<<"Departamento"<<endl;
         }
 };
 
@@ -129,13 +132,16 @@ class Casas: public Edificio{
         }
         void imprimeDatos() {
             cout<< "Metros cuadrados: " << size <<endl;
-            cout<< "Pisos: " << pisos <<endl;
             cout<< "Precio: "<< precio << endl;
+            cout<< "Pisos: " << pisos <<endl;
             cout<< "Habitaciones: " << habitaciones <<endl;
-            cout<<"Baños: "<<baños<<endl;
-            cout<< "Estacionamientos: "<< estacionamiento << endl;
+            cout<< "Baños: "<<baños <<endl;
+            cout<< "Estacionamientos: " << estacionamiento << endl;
             if(sotano==true){
-                cout<< "Tiene terraza"<<endl;
+                cout<< "Tiene sotano"<<endl<<endl;
+            }
+            else if(sotano==false){
+                cout<<"No tiene sotano"<<endl<<endl;
             }
         }
 };
@@ -188,7 +194,10 @@ class Oficinas:Edificio{
             cout<< "Cubiculos: " << cubiculos <<endl;
             cout<<"Maquinas expendedoras: "<<maquinasExpendedoras<<endl;
             if(salaConferencias==true){
-                cout<< "Tiene sala de conferencias"<<endl;
+                cout<< "Tiene sala de conferencias"<<endl<<endl;
+            }
+            else if(salaConferencias==false){
+                cout<<"No tiene sala de conferencias"<<endl<<endl;
             }
         }
 };

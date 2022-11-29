@@ -15,6 +15,9 @@ class Edificio{
             precio = _precio;
             pisos = _pisos;
         }
+    void imprimirEdificios(){
+        cout<<"ayuda"<<endl;
+    }
     //Getters
     int getSize(){
         int _size = size;
@@ -39,9 +42,4 @@ class Edificio{
     void setPisos(int nuevoPisos){
         pisos = nuevoPisos;
     }
-    // virtual void imprimeEdificios() {
-    // cout<< "Metros cuadrados: " << size <<endl;
-    // cout<< "Pisos: " << pisos <<endl;
-    // cout<< "Precio: "<< precio << endl;
-    //     }
 };
