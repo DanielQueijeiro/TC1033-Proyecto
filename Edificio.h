@@ -1,13 +1,15 @@
 #include<stdlib.h>
-
+#include<string.h>
+using namespace std;
 
 
 class Edificio{
-    private:
+    protected:
         int size;
         int precio;
         int pisos;
     public:
+        Edificio(){}
         Edificio(int _size, int _precio, int _pisos){
             size = _size;
             precio = _precio;
@@ -37,4 +39,9 @@ class Edificio{
     void setPisos(int nuevoPisos){
         pisos = nuevoPisos;
     }
+    // virtual void imprimeEdificios() {
+    // cout<< "Metros cuadrados: " << size <<endl;
+    // cout<< "Pisos: " << pisos <<endl;
+    // cout<< "Precio: "<< precio << endl;
+    //     }
 };

@@ -1,9 +1,27 @@
 #include<stdlib.h>
-#include "Edificio.h"
+#include<vector>
+#include"Edificio.h"
+using namespace std;
 
 
 class Inmobiliaria{
-    //Aqui se podra ver y cambiar los edificios
+   // Aqui se podra ver y cambiar los edificios
+    private:
+        Departamentos departamento;
+        Casas casa;
+        Oficinas oficina;
+        vector<Edificio*> edificios;
+    public:
+        void agregarEdificio(Edificio* edif){
+            edificios.push_back(edif);
+        }      
+
+        // void mostrarEdificios(){
+        //     for(int i = 0; i<edificios.size();i++){
+        //         edificios[i]->imprimeEdificio();
+        //         cout<<endl;
+        //     }
+        // }
 };
 
 
@@ -12,13 +30,12 @@ class Departamentos: public Edificio{
     private:
         int habitaciones;
         int baños;
-        int cocina;
         bool terraza;
     public:
         //Constructores
+        Departamentos():Edificio(){}
         Departamentos(bool _terraza, int _habitaciones, int _baños):Edificio(0,0,0){
             terraza = _terraza;
-
             baños = _baños;
             habitaciones = _habitaciones;
         }
@@ -50,6 +67,16 @@ class Departamentos: public Edificio{
         void setHabitaciones(int nuevoHabitaciones){
             habitaciones = nuevoHabitaciones;
         }
+        void imprimeDatos() {
+            cout<< "Metros cuadrados: " << size <<endl;
+            cout<< "Pisos: " << pisos <<endl;
+            cout<< "Precio: "<< precio << endl;
+            cout<< "Habitaciones: " << habitaciones <<endl;
+            cout<< "Baños: "<< baños << endl;
+            if(terraza==true){
+                cout<< "Tiene terraza"<<endl;
+            }
+        }
 };
 
 class Casas: public Edificio{
@@ -60,6 +87,7 @@ class Casas: public Edificio{
         bool sotano;
     public:
         //Constructores
+        Casas():Edificio(){}
         Casas(int _estacionamiento, int _baños, int _habitaciones, bool _sotano): Edificio(0,0,0){
             estacionamiento = _estacionamiento;
             sotano = _sotano;
@@ -99,6 +127,17 @@ class Casas: public Edificio{
         void setHabitaciones(int nuevoHabitaciones){
             habitaciones = nuevoHabitaciones;
         }
+        void imprimeDatos() {
+            cout<< "Metros cuadrados: " << size <<endl;
+            cout<< "Pisos: " << pisos <<endl;
+            cout<< "Precio: "<< precio << endl;
+            cout<< "Habitaciones: " << habitaciones <<endl;
+            cout<<"Baños: "<<baños<<endl;
+            cout<< "Estacionamientos: "<< estacionamiento << endl;
+            if(sotano==true){
+                cout<< "Tiene terraza"<<endl;
+            }
+        }
 };
 
 class Oficinas:Edificio{
@@ -109,6 +148,7 @@ class Oficinas:Edificio{
 
     public:
         //Constructores
+        Oficinas():Edificio(){}
         Oficinas(bool _salaConferencias, int _maquinasExpendedoras, int _cubiculos):Edificio(0,0,0){
             salaConferencias = _salaConferencias;
             maquinasExpendedoras = _maquinasExpendedoras;
@@ -140,5 +180,15 @@ class Oficinas:Edificio{
 
         void setCubiculos(int nuevoHabitaciones){
             cubiculos = nuevoHabitaciones;
+        }
+        void imprimeDatos() {
+            cout<< "Metros cuadrados: " << size <<endl;
+            cout<< "Pisos: " << pisos <<endl;
+            cout<< "Precio: "<< precio << endl;
+            cout<< "Cubiculos: " << cubiculos <<endl;
+            cout<<"Maquinas expendedoras: "<<maquinasExpendedoras<<endl;
+            if(salaConferencias==true){
+                cout<< "Tiene sala de conferencias"<<endl;
+            }
         }
 };

@@ -1,37 +1,96 @@
 #include<iostream>
 #include<windows.h>
 #include"Inmobiliaria.h"
+#include<windows.h>
+#include<cstdlib>
 using namespace std;
 
 int main(){
-    //Departamentos(bool _terraza, int _habitaciones, int _baños)
-    Departamentos d_1 = Departamentos(true,50,80000);
-        cout<<"Introducir pisos nuevos del departamento 1"<<endl;
-        int pisos_nuevo;
-        cin>>pisos_nuevo;
-        d_1.setHabitaciones(pisos_nuevo);
-        cout<<"El departamento tiene: "<<d_1.getHabitaciones()<<" pisos."<<endl;
-        if(d_1.getTerraza()==true){
-            cout<<"El departamento tiene terraza."<<endl<<endl;
-        }
+    int op;
+    Casas c1;
+    while (true)
+    {
+        cout<<"Bienvenido al sistema de Inmobiliaria ABC"<<endl;
+        cout<<"Por favor ingrese lo que desea realizar"<<endl;
+        cout<<"1.- Ver edificios disponibles"<<endl;
+        cout<<"2.- Agregar edificios"<<endl;
+        cout<<"3.- Salir"<<endl;
+        cin>>op;
+        if (op==1)
+        //Ver edificios
+        {
+            
 
-    //Casas(int _estacionamiento, int _baños, int _habitaciones, bool _sotano)
-    Casas c_1 = Casas(2,2,3,true); 
-        cout<<endl<<"Introducir size nuevo de la casa 1"<<endl;
-        int size_nuevo;
-        cin>>size_nuevo;
-        c_1.setSize(size_nuevo);
-        cout<<"La casa tiene: "<<c_1.getSize()<<" metros cuadrados."<<endl;
-        cout<<"La casa tiene: "<<c_1.getHabitaciones()<<" habitaciones."<<endl<<endl;
-
-    // Oficinas(bool _salaConferencias, int _maquinasExpendedoras, int _cubiculos)
-    Oficinas o_1 = Oficinas(true,5,50);
-        cout<<endl<<"Introducir cubiculos de la oficina 1"<<endl;
-        int cubiculos_nuevo;
-        cin>>cubiculos_nuevo;
-        o_1.setCubiculos(cubiculos_nuevo);
-        cout<<"La oficina tiene: "<<o_1.getCubiculos()<<" cubiculos."<<endl;
-        if(o_1.getSalaConferencias()==true){
-            cout<<"La oficina tiene sala de conferencia."<<endl<<endl;
+            // if(c1.imprimeDatos()==""){
+            //     cout<<"No hay ningun edificio registrado"<<endl;
+            // }
+            // else{
+            // c1.imprimeDatos();
+            // }
+            break;
         }
+        else if (op==2)
+        //Añadir
+        {   
+            system("cls");
+            cout<<"Ingrese el tipo de edificio que desea agregar"<<endl;
+            cout<<"1.- Casa"<<endl;
+            cout<<"2.- Departamento"<<endl;
+            cout<<"3.- Oficina"<<endl;
+            cin>>op;
+            if (op==1){
+                //casa
+                system("cls");
+                cout<<"Ingrese los datos de la casa"<<endl;
+                cout<<"Metros cuadrados: "<<endl;
+                cout<<"Precio: "<<endl;
+                cout<<"Pisos: "<<endl;
+                cout<<"Habitaciones: "<<endl;
+                cout<<"Baños: "<<endl;
+                cout<<"Estacionamientos: "<<endl;
+                cout<<"Tiene sotano? (y/n): "<<endl;
+                break;
+            }
+            if (op==2){
+                //departamento
+                system("cls");
+                cout<<"Ingrese los datos de la casa"<<endl;
+                cout<<"Metros cuadrados: "<<endl;
+                cout<<"Precio: "<<endl;
+                cout<<"Pisos: "<<endl;
+                cout<<"Habitaciones: "<<endl;
+                cout<<"Baños: "<<endl;
+                cout<<"Tiene terraza? (y/n): "<<endl;
+                break;
+            }
+            if (op==3){
+                //oficina
+                system("cls");
+                cout<<"Ingrese los datos de la casa"<<endl;
+                cout<<"Metros cuadrados: "<<endl;
+                cout<<"Precio: "<<endl;
+                cout<<"Pisos: "<<endl;
+                cout<<"Cubiculos: "<<endl;
+                cout<<"Maquinas expendedoras: "<<endl;
+                cout<<"Tiene sala de conferencias? (y/n): "<<endl;
+                break;
+            }
+            else{
+            system("cls");
+            cout<<"Ingrese un valor valido"<<endl;
+
+        }   
+        }        
+        else if (op==3)
+        {
+            cout<<"Gracias por usar el sistema"<<endl;
+            break;
+        }     
+        else{
+            system("cls");
+            cout<<"Ingrese un valor valido"<<endl;
+
+        }     
+    }
+    
 }
