@@ -146,7 +146,7 @@ class Casas: public Edificio{
         }
 };
 
-class Oficinas:Edificio{
+class Oficinas:public Edificio{
     private:
         bool salaConferencias;
         int maquinasExpendedoras;
