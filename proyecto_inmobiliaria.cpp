@@ -8,15 +8,15 @@ using namespace std;
 int main(){
     system("cls");
     //Casas(int _estacionamiento, int _baños, int _habitaciones, bool _sotano)
-    Casas c1(2,3,4,true);
+    Casas c1(0,0,0,false);
     Casas c2(0,0,0,false);
     Casas c3(0,0,0,false);
     //Departamentos(bool _terraza, int _habitaciones, int _baños)
-    Departamentos d1(true,2,2);
+    Departamentos d1(false,0,0);
     Departamentos d2(false,0,0);
     Departamentos d3(false,0,0);
     //Oficinas(bool _salaConferencias, int _maquinasExpendedoras, int _cubiculos)
-    Oficinas o1(true,4,10);
+    Oficinas o1(false,0,0);
     Oficinas o2(false,0,0);
     Oficinas o3(false,0,0);
     int op = 0;
@@ -38,20 +38,13 @@ int main(){
     {
         cout<<"Bienvenido al sistema de Inmobiliaria ABC"<<endl;
         cout<<"Por favor ingrese lo que desea realizar"<<endl;
-        cout<<"1.- Ver edificios disponibles"<<endl;
-        cout<<"2.- Ver datos de los edificios"<<endl;
-        cout<<"3.- Agregar edificios"<<endl;
-        cout<<"4.- Eliminar edificios"<<endl;
-        cout<<"5.- Salir"<<endl;
+        cout<<"1.- Ver edificios"<<endl;
+        cout<<"2.- Agregar edificios"<<endl;
+        cout<<"3.- Eliminar edificios"<<endl;
+        cout<<"4.- Salir"<<endl;
         cin>>op;
         //Ver edificios
-        if(op==1){
-            system("cls");
-            cout<<"Edificios"<<endl;
-        }
-        
-        //Ver datos
-        else if (op==2)
+        if (op==1)
         {
             system("cls");
             if((c1.getHabitaciones()==0)){
@@ -136,7 +129,7 @@ int main(){
         }
         
         //Añadir edificios
-        else if (op==3)
+        else if (op==2)
         {   
             system("cls");
             cout<<"La inmobiliaria tiene un maximo de 3 edificios de cada tipo"<<endl;
@@ -465,7 +458,7 @@ int main(){
         }
         
         //Eliminar edificios
-        else if(op==4){
+        else if(op==3){
             system("cls");
             cout<<"Seleccione el edificio que desea eliminar"<<endl;
             cout<<"1.- Casa"<<endl;
@@ -571,7 +564,7 @@ int main(){
         }         
         
         //Salir programa
-        else if (op==5)
+        else if (op==4)
         {
             cout<<"Gracias por usar el sistema"<<endl;
             break;
