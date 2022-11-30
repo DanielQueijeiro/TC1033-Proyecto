@@ -15,9 +15,6 @@ class Edificio{
             precio = _precio;
             pisos = _pisos;
         }
-    void imprimirEdificios(){
-        cout<<"ayuda"<<endl;
-    }
     //Getters
     int getSize(){
         int _size = size;

@@ -4,25 +4,6 @@
 using namespace std;
 
 
-class Inmobiliaria{
-    private:
-        vector<Edificio*> edificios;
-    public:
-        Inmobiliaria(){}
-        vector<Edificio*> getEdificio(){
-            return edificios;
-        }
-        void agregarEdificio(Edificio*edif){
-            edificios.push_back(edif);
-        }
-        void imprimirEdifificios(){
-            for(int i =0; i<edificios.size();i++)
-                edificios[i]->imprimirEdificios();
-        }
-};
-
-
-
 class Departamentos: public Edificio{
     private:
         int habitaciones;
@@ -76,9 +57,6 @@ class Departamentos: public Edificio{
             else if(terraza==false){
                 cout<<"No tiene terraza"<<endl<<endl;
             }
-        }
-        void imprimirse(){
-            cout<<"Departamento"<<endl;
         }
 };
 
