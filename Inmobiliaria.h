@@ -52,17 +52,17 @@ class Departamentos: public Edificio{
             return _habitaciones;
         }
         //Setters
-        void setTerraza(bool nuevoTerraza){
-            terraza = nuevoTerraza;
+        void setTerraza(bool _terraza){
+            terraza = _terraza;
         }
 
 
-        void setBaños(int nuevoBaños){
-            baños = nuevoBaños;
+        void setBaños(int _baños){
+            baños = _baños;
         }
 
-        void setHabitaciones(int nuevoHabitaciones){
-            habitaciones = nuevoHabitaciones;
+        void setHabitaciones(int _habitaciones){
+            habitaciones = _habitaciones;
         }
         void imprimeDatos() {
             cout<< "Metros cuadrados: " << size <<endl;
@@ -115,20 +115,20 @@ class Casas: public Edificio{
             return _habitaciones;
         }
         //Setters
-        void setEstacionamiento(int nuevoEstacionamiento){
-            estacionamiento = nuevoEstacionamiento;
+        void setEstacionamiento(int _estacionamiento){
+            estacionamiento = _estacionamiento;
         }
 
-        void setBaños(int nuevoBaños){
-            baños = nuevoBaños;
+        void setBaños(int _baños){
+            baños = _baños;
         }
 
-        void setSotano(int nuevoSotano){
-            sotano = nuevoSotano;
+        void setSotano(int _sotano){
+            sotano = _sotano;
         }
 
-        void setHabitaciones(int nuevoHabitaciones){
-            habitaciones = nuevoHabitaciones;
+        void setHabitaciones(int _habitaciones){
+            habitaciones = _habitaciones;
         }
         void imprimeDatos() {
             cout<< "Metros cuadrados: " << size <<endl;
@@ -175,17 +175,17 @@ class Oficinas:public Edificio{
             return _cubiculos;
         }
         //Setters
-        void setSalaConferencias(int nuevoSalaConferencias){
-            salaConferencias = nuevoSalaConferencias;
+        void setSalaConferencias(int _salaConferencias){
+            salaConferencias = _salaConferencias;
         }
 
-        void setMaquinasExpendedoras(int nuevoMaquinasExpendedoras){
-            maquinasExpendedoras = nuevoMaquinasExpendedoras;
+        void setMaquinasExpendedoras(int _maquinasExpendedoras){
+            maquinasExpendedoras = _maquinasExpendedoras;
         }
 
 
-        void setCubiculos(int nuevoHabitaciones){
-            cubiculos = nuevoHabitaciones;
+        void setCubiculos(int _habitaciones){
+            cubiculos = _habitaciones;
         }
         void imprimeDatos() {
             cout<< "Metros cuadrados: " << size <<endl;

@@ -44,12 +44,14 @@ int main(){
         cout<<"4.- Eliminar edificios"<<endl;
         cout<<"5.- Salir"<<endl;
         cin>>op;
-
-        if(op==1){
-
-        }
-        else if (op==2)
         //Ver edificios
+        if(op==1){
+            system("cls");
+            cout<<"Edificios"<<endl;
+        }
+        
+        //Ver datos
+        else if (op==2)
         {
             system("cls");
             if((c1.getHabitaciones()==0)){
@@ -132,8 +134,9 @@ int main(){
             }
 
         }
+        
+        //Añadir edificios
         else if (op==3)
-        //Añadir
         {   
             system("cls");
             cout<<"La inmobiliaria tiene un maximo de 3 edificios de cada tipo"<<endl;
@@ -170,7 +173,6 @@ int main(){
                         _sotano=false;
                     }
                     system("cls");
-                    Casas c1(_estacionamiento, _baños, _habitaciones, _sotano);
                     c1.setPisos(_pisos);
                     c1.setPrecio(_precio);
                     c1.setSize(_size);
@@ -205,7 +207,6 @@ int main(){
                         _sotano=false;
                     }
                     system("cls");
-                    Casas c2(_estacionamiento, _baños, _habitaciones, _sotano);
                     c2.setPisos(_pisos);
                     c2.setPrecio(_precio);
                     c2.setSize(_size);
@@ -240,7 +241,6 @@ int main(){
                         _sotano=false;
                     }
                     system("cls");
-                    Casas c3(_estacionamiento, _baños, _habitaciones, _sotano);
                     c3.setPisos(_pisos);
                     c3.setPrecio(_precio);
                     c3.setSize(_size);
@@ -278,7 +278,6 @@ int main(){
                         _terraza=false;
                     }
                     system("cls");
-                    Departamentos d1(_baños, _habitaciones, _sotano);
                     d1.setPisos(_pisos);
                     d1.setPrecio(_precio);
                     d1.setSize(_size);
@@ -310,7 +309,6 @@ int main(){
                         _terraza=false;
                     }
                     system("cls");
-                    Departamentos d2(_baños, _habitaciones, _sotano);
                     d2.setPisos(_pisos);
                     d2.setPrecio(_precio);
                     d2.setSize(_size);
@@ -342,7 +340,6 @@ int main(){
                         _terraza=false;
                     }
                     system("cls");
-                    Departamentos d3(_baños, _habitaciones, _sotano);
                     d3.setPisos(_pisos);
                     d3.setPrecio(_precio);
                     d3.setSize(_size);
@@ -379,7 +376,6 @@ int main(){
                         _salaConferencias=false;
                     }
                     system("cls");
-                    Oficinas o1(_maquinasExpendedoras, _cubiculos, _salaConferencias);
                     o1.setPisos(_pisos);
                     o1.setPrecio(_precio);
                     o1.setSize(_size);
@@ -411,7 +407,6 @@ int main(){
                         _salaConferencias=false;
                     }
                     system("cls");
-                    Oficinas o2(_maquinasExpendedoras, _cubiculos, _salaConferencias);
                     o2.setPisos(_pisos);
                     o2.setPrecio(_precio);
                     o2.setSize(_size);
@@ -443,7 +438,6 @@ int main(){
                         _salaConferencias=false;
                     }
                     system("cls");
-                    Oficinas o3(_maquinasExpendedoras, _cubiculos, _salaConferencias);
                     o3.setPisos(_pisos);
                     o3.setPrecio(_precio);
                     o3.setSize(_size);
@@ -465,11 +459,13 @@ int main(){
 
             }
             else if(op==2){
+                cout<<"Gracias por usar el sistema"<<endl;
                 break;
             }
         }
+        
+        //Eliminar edificios
         else if(op==4){
-            //eliminar
             system("cls");
             cout<<"Seleccione el edificio que desea eliminar"<<endl;
             cout<<"1.- Casa"<<endl;
@@ -573,11 +569,15 @@ int main(){
             }
         } 
         }         
+        
+        //Salir programa
         else if (op==5)
         {
             cout<<"Gracias por usar el sistema"<<endl;
             break;
         }     
+        
+        //Input invalido
         else{
             system("cls");
             cout<<"Ingrese un valor valido"<<endl;

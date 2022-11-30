@@ -33,13 +33,13 @@ class Edificio{
     }
 
     //Setters
-    void setSize(int nuevoSize){
-        size = nuevoSize;
+    void setSize(int _size){
+        size = _size;
     }
-    void setPrecio(int nuevoPrecio){
-        precio = nuevoPrecio;
+    void setPrecio(int _precio){
+        precio = _precio;
     }
-    void setPisos(int nuevoPisos){
-        pisos = nuevoPisos;
+    void setPisos(int _pisos){
+        pisos = _pisos;
     }
 };
