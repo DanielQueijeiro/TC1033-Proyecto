@@ -133,6 +133,7 @@ int main(){
         {   
             system("cls");
             cout<<"La inmobiliaria tiene un maximo de 3 edificios de cada tipo"<<endl;
+            cout<<"(Todos los edificios deben tener por lo menos una habitacion o cubiculo)"<<endl;
             cout<<"Ingrese el tipo de edificio que desea agregar"<<endl;
             cout<<"1.- Casa"<<endl;
             cout<<"2.- Departamento"<<endl;
@@ -443,7 +444,7 @@ int main(){
             }
             else{
                 system("cls");
-                cout<<"Ingrese un valor valido"<<endl;
+                cout<<"El numero ingresado es invalido"<<endl;
             }
             cout<<"1.- Regresar a menu principal"<<endl;
             cout<<"2.- Salir"<<endl;
