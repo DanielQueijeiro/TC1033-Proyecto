@@ -1,5 +1,6 @@
 #include<stdlib.h>
 #include<string.h>
+#include <sstream>
 using namespace std;
 
 
@@ -8,12 +9,14 @@ class Edificio{
         int size;
         int precio;
         int pisos;
+        string nombre;
     public:
         Edificio(){}
-        Edificio(int _size, int _precio, int _pisos){
+        Edificio(int _size, int _precio, int _pisos, string _nombre){
             size = _size;
             precio = _precio;
             pisos = _pisos;
+            nombre = _nombre;
         }
     //Getters
     int getSize(){
@@ -28,6 +31,10 @@ class Edificio{
         int _pisos = pisos;
         return pisos;
     }
+    string getNombre(){
+        string _nombre = nombre;
+        return nombre;
+    }
 
     //Setters
     void setSize(int _size){
@@ -38,5 +45,8 @@ class Edificio{
     }
     void setPisos(int _pisos){
         pisos = _pisos;
+    }
+    void setNombre(string _nombre){
+        nombre = _nombre;
     }
 };

@@ -19,7 +19,10 @@ int main(){
     Oficinas o1(false,0,0);
     Oficinas o2(false,0,0);
     Oficinas o3(false,0,0);
+    //Inmobiliaria(edificios)
+    Inmobiliaria abc;
     int op = 0;
+    string _nombre = "";
     int _size = 0;
     int _precio = 0;
     int _pisos = 0;
@@ -39,89 +42,107 @@ int main(){
         cout<<"Bienvenido al sistema de Inmobiliaria ABC"<<endl;
         cout<<"Por favor ingrese lo que desea realizar"<<endl;
         cout<<"1.- Ver edificios"<<endl;
-        cout<<"2.- Agregar edificios"<<endl;
-        cout<<"3.- Eliminar edificios"<<endl;
-        cout<<"4.- Salir"<<endl;
+        cout<<"2.- Ver datos de los edificios"<<endl;
+        cout<<"3.- Agregar edificios"<<endl;
+        cout<<"4.- Eliminar edificios"<<endl;
+        cout<<"5.- Salir"<<endl;
         cin>>op;
+
         //Ver edificios
-        if (op==1)
+        if (op==1){
+            system("cls");
+            abc.agregarCasa(c1,1);
+            abc.agregarCasa(c2,2);
+            abc.agregarCasa(c3,3);
+            cout<<abc.cantidadCasas();
+            abc.agregarDepartamentos(d1,1);
+            abc.agregarDepartamentos(d2,2);
+            abc.agregarDepartamentos(d3,3);
+            cout<<abc.cantidadDepartamentos();
+            abc.agregarOficinas(o1,1);
+            abc.agregarOficinas(o2,2);
+            abc.agregarOficinas(o3,3);
+            cout<<abc.cantidadOficinas();
+        }
+        //Ver datos de edificios
+        else if (op==2)
         {
             system("cls");
             if((c1.getHabitaciones()==0)){
-                cout<<"Casa 1 no tiene datos"<<endl<<endl;
+                cout<<"Casa (1)"<<c1.getNombre()<<" no tiene datos"<<endl<<endl;
             }
             else if(c1.getHabitaciones()!=0){
-                cout<<"Datos casa 1"<<endl;
+                cout<<"Datos casa (1)"<<c1.getNombre()<<endl;
                 c1.imprimeDatos();
                 cout<<endl;
             }
 
             if((c2.getHabitaciones()==0)){
-                cout<<"Casa 2 no tiene datos"<<endl<<endl;
+                cout<<"Casa (2)"<<c2.getNombre()<<" no tiene datos"<<endl<<endl;
             }
             else if(c2.getHabitaciones()!=0){
-                cout<<"Datos casa 2"<<endl;
+                cout<<"Datos casa (2)"<<c2.getNombre()<<endl;
                 c2.imprimeDatos();              
                 cout<<endl;  
             }
     
             if((c3.getHabitaciones()==0)){
-                cout<<"Casa 3 no tiene datos"<<endl<<endl;
+                cout<<"Casa (3)"<<c3.getNombre()<<" no tiene datos"<<endl<<endl;
             }
             else if(c3.getHabitaciones()!=0){
-                cout<<"Datos casa 3"<<endl;
+                cout<<"Datos casa (3)"<<c3.getNombre()<<endl;
                 c3.imprimeDatos();                
                 cout<<endl;
             }
             if((d1.getHabitaciones()==0)){
-                cout<<"Departamento 1 no tiene datos"<<endl<<endl;
+                cout<<"Departamento (1)"<<d1.getNombre()<<" no tiene datos"<<endl<<endl;
             }
             else if(d1.getHabitaciones()!=0){
-                cout<<"Datos departamento 1"<<endl;
+                cout<<"Datos departamento (1) "<<d1.getNombre()<<endl;
                 d1.imprimeDatos();
                 cout<<endl;                
             }
 
             if((d2.getHabitaciones()==0)){
-                cout<<"Departamento 2 no tiene datos"<<endl<<endl;
+                cout<<"Departamento (2)"<<d2.getNombre()<<" no tiene datos"<<endl<<endl;
             }
             else if(d2.getHabitaciones()!=0){
-                cout<<"Datos departamento 2"<<endl;
+                cout<<"Datos departamento (2) "<<d2.getNombre()<<endl;
                 d2.imprimeDatos();              
                 cout<<endl;  
             }
 
             if((d3.getHabitaciones()==0)){
-                cout<<"Departamento 3 no tiene datos"<<endl<<endl;
+                cout<<"Departamento (3)"<<d3.getNombre()<<" no tiene datos"<<endl<<endl;
             }
             else if(d3.getHabitaciones()!=0){
-                cout<<"Datos departamento 3"<<endl;
+                cout<<"Datos departamento (3) "<<d3.getNombre()<<endl;
                 d3.imprimeDatos();                
                 cout<<endl;
             }
             if((o1.getCubiculos()==0)){
-                cout<<"Oficina 1 no tiene datos"<<endl<<endl;
+                cout<<"Oficina (1)"<<o1.getNombre()<<" no tiene datos"<<endl<<endl;
             }
             else if(o1.getCubiculos()!=0){
-                cout<<"Datos oficina 1"<<endl;
+                cout<<"Datos oficina (1) "<<o1.getNombre()<<endl;
                 o1.imprimeDatos();
                 cout<<endl;                
             }
 
             if((o2.getCubiculos()==0)){
-                cout<<"Oficina 2 no tiene datos"<<endl<<endl;
+                cout<<"Oficina (2)"<<o2.getNombre()<<" no tiene datos"<<endl<<endl;
             }
             else if(o2.getCubiculos()!=0){
-                cout<<"Datos oficina 2"<<endl;
+                cout<<"Datos oficina (2) "<<o2.getNombre()<<endl;
                 o2.imprimeDatos();
                 cout<<endl;                
             }
 
             if((o3.getCubiculos()==0)){
-                cout<<"Oficina 3 no tiene datos"<<endl<<endl;
+                cout<<"Oficina (3)"<<o3.getNombre()<<" no tiene datos"<<endl<<endl;
             }
             else if(o3.getCubiculos()!=0){
-                cout<<"Datos oficina 3"<<endl;
+                cout<<"Datos oficina (3) "<<o3.getNombre()<<endl;
                 o3.imprimeDatos();
                 cout<<endl;                
             }
@@ -129,7 +150,7 @@ int main(){
         }
         
         //Añadir edificios
-        else if (op==2)
+        else if (op==3)
         {   
             system("cls");
             cout<<"La inmobiliaria tiene un maximo de 3 edificios de cada tipo"<<endl;
@@ -146,6 +167,8 @@ int main(){
                 if (numEdificio==1){
                     system("cls");
                     cout<<"Ingrese los datos de la casa 1"<<endl;
+                    cout<<"Nombre de la casa"<<endl;
+                    cin>>_nombre;
                     cout<<"Metros cuadrados: "<<endl;
                     cin>>_size;
                     cout<<"Precio: "<<endl;
@@ -167,6 +190,7 @@ int main(){
                         _sotano=false;
                     }
                     system("cls");
+                    c1.setNombre(_nombre);
                     c1.setPisos(_pisos);
                     c1.setPrecio(_precio);
                     c1.setSize(_size);
@@ -180,6 +204,8 @@ int main(){
                 if (numEdificio==2){
                     system("cls");
                     cout<<"Ingrese los datos de la casa 2"<<endl;
+                    cout<<"Nombre de la casa"<<endl;
+                    cin>>_nombre;
                     cout<<"Metros cuadrados: "<<endl;
                     cin>>_size;
                     cout<<"Precio: "<<endl;
@@ -201,6 +227,7 @@ int main(){
                         _sotano=false;
                     }
                     system("cls");
+                    c2.setNombre(_nombre);
                     c2.setPisos(_pisos);
                     c2.setPrecio(_precio);
                     c2.setSize(_size);
@@ -214,6 +241,8 @@ int main(){
                 if (numEdificio==3){
                     system("cls");
                     cout<<"Ingrese los datos de la casa 3"<<endl;
+                    cout<<"Nombre de la casa"<<endl;
+                    cin>>_nombre;
                     cout<<"Metros cuadrados: "<<endl;
                     cin>>_size;
                     cout<<"Precio: "<<endl;
@@ -235,6 +264,7 @@ int main(){
                         _sotano=false;
                     }
                     system("cls");
+                    c3.setNombre(_nombre);
                     c3.setPisos(_pisos);
                     c3.setPrecio(_precio);
                     c3.setSize(_size);
@@ -253,6 +283,8 @@ int main(){
                 if (numEdificio==1){
                     system("cls");
                     cout<<"Ingrese los datos del departamento 1"<<endl;
+                    cout<<"Nombre del departamento"<<endl;
+                    cin>>_nombre;
                     cout<<"Metros cuadrados: "<<endl;
                     cin>>_size;
                     cout<<"Precio: "<<endl;
@@ -272,6 +304,7 @@ int main(){
                         _terraza=false;
                     }
                     system("cls");
+                    d1.setNombre(_nombre);
                     d1.setPisos(_pisos);
                     d1.setPrecio(_precio);
                     d1.setSize(_size);
@@ -284,6 +317,8 @@ int main(){
                 if (numEdificio==2){
                     system("cls");
                     cout<<"Ingrese los datos del departamento 2"<<endl;
+                    cout<<"Nombre del departamento"<<endl;
+                    cin>>_nombre;
                     cout<<"Metros cuadrados: "<<endl;
                     cin>>_size;
                     cout<<"Precio: "<<endl;
@@ -303,6 +338,7 @@ int main(){
                         _terraza=false;
                     }
                     system("cls");
+                    d2.setNombre(_nombre);
                     d2.setPisos(_pisos);
                     d2.setPrecio(_precio);
                     d2.setSize(_size);
@@ -315,6 +351,8 @@ int main(){
                 if (numEdificio==3){
                     system("cls");
                     cout<<"Ingrese los datos del departamento 3"<<endl;
+                    cout<<"Nombre del departamento"<<endl;
+                    cin>>_nombre;
                     cout<<"Metros cuadrados: "<<endl;
                     cin>>_size;
                     cout<<"Precio: "<<endl;
@@ -334,6 +372,7 @@ int main(){
                         _terraza=false;
                     }
                     system("cls");
+                    d3.setNombre(_nombre);
                     d3.setPisos(_pisos);
                     d3.setPrecio(_precio);
                     d3.setSize(_size);
@@ -351,6 +390,8 @@ int main(){
                 if (numEdificio==1){
                     system("cls");
                     cout<<"Ingrese los datos de la oficina 1"<<endl;
+                    cout<<"Nombre de la oficina"<<endl;
+                    cin>>_nombre;
                     cout<<"Metros cuadrados: "<<endl;
                     cin>>_size;
                     cout<<"Precio: "<<endl;
@@ -370,6 +411,7 @@ int main(){
                         _salaConferencias=false;
                     }
                     system("cls");
+                    o1.setNombre(_nombre);
                     o1.setPisos(_pisos);
                     o1.setPrecio(_precio);
                     o1.setSize(_size);
@@ -382,6 +424,8 @@ int main(){
                 if (numEdificio==2){
                     system("cls");
                     cout<<"Ingrese los datos de la oficina 2"<<endl;
+                    cout<<"Nombre de la oficina"<<endl;
+                    cin>>_nombre;
                     cout<<"Metros cuadrados: "<<endl;
                     cin>>_size;
                     cout<<"Precio: "<<endl;
@@ -401,6 +445,7 @@ int main(){
                         _salaConferencias=false;
                     }
                     system("cls");
+                    o2.setNombre(_nombre);
                     o2.setPisos(_pisos);
                     o2.setPrecio(_precio);
                     o2.setSize(_size);
@@ -413,6 +458,8 @@ int main(){
                 if (numEdificio==3){
                     system("cls");
                     cout<<"Ingrese los datos de la oficina 3"<<endl;
+                    cout<<"Nombre de la oficina"<<endl;
+                    cin>>_nombre;
                     cout<<"Metros cuadrados: "<<endl;
                     cin>>_size;
                     cout<<"Precio: "<<endl;
@@ -432,6 +479,7 @@ int main(){
                         _salaConferencias=false;
                     }
                     system("cls");
+                    o3.setNombre(_nombre);
                     o3.setPisos(_pisos);
                     o3.setPrecio(_precio);
                     o3.setSize(_size);
@@ -459,7 +507,7 @@ int main(){
         }
         
         //Eliminar edificios
-        else if(op==3){
+        else if(op==4){
             system("cls");
             cout<<"Seleccione el edificio que desea eliminar"<<endl;
             cout<<"1.- Casa"<<endl;
@@ -476,6 +524,7 @@ int main(){
                     c1.setBaños(0);
                     c1.setEstacionamiento(0);
                     c1.setHabitaciones(0);
+                    c1.setNombre("");
                     c1.setSotano(false);
                     cout<<"La casa 1 ha sido eliminada"<<endl;
                 }
@@ -486,6 +535,7 @@ int main(){
                     c2.setBaños(0);
                     c2.setEstacionamiento(0);
                     c2.setHabitaciones(0);
+                    c2.setNombre("");
                     c2.setSotano(false);
                     cout<<"La casa 2 ha sido eliminada"<<endl;
                 }
@@ -496,6 +546,7 @@ int main(){
                     c3.setBaños(0);
                     c3.setEstacionamiento(0);
                     c3.setHabitaciones(0);
+                    c3.setNombre("");
                     c3.setSotano(false);
                     cout<<"La casa 3 ha sido eliminada"<<endl;
                 }
@@ -508,6 +559,7 @@ int main(){
                     d1.setPrecio(0);
                     d1.setSize(0);
                     d1.setBaños(0);
+                    d1.setNombre("");
                     d1.setHabitaciones(0);
                     d1.setTerraza(false);
                     cout<<"El departamento 1 ha sido eliminado"<<endl;
@@ -518,6 +570,7 @@ int main(){
                     d2.setSize(0);
                     d2.setBaños(0);
                     d2.setHabitaciones(0);
+                    d2.setNombre("");
                     d2.setTerraza(false);
                     cout<<"El departamento 2 ha sido eliminado"<<endl;
                 }
@@ -526,6 +579,7 @@ int main(){
                     d3.setPrecio(0);
                     d3.setSize(0);
                     d3.setBaños(0);
+                    d3.setNombre("");
                     d3.setHabitaciones(0);
                     d3.setTerraza(false);
                     cout<<"El departamento 3 ha sido eliminado"<<endl;
@@ -540,6 +594,7 @@ int main(){
                     o1.setSize(0);
                     o1.setCubiculos(0);
                     o1.setMaquinasExpendedoras(0);
+                    o1.setNombre("");
                     o1.setSalaConferencias(false);
                     cout<<"La oficina 1 ha sido eliminada"<<endl;
                 }
@@ -550,6 +605,7 @@ int main(){
                     o2.setCubiculos(0);
                     o2.setMaquinasExpendedoras(0);
                     o2.setSalaConferencias(false);
+                    o2.setNombre("");
                     cout<<"La oficina 2 ha sido eliminada"<<endl;
                 }
                 else if (numEdificio==3){
@@ -558,6 +614,7 @@ int main(){
                     o3.setSize(0);
                     o3.setCubiculos(0);
                     o3.setMaquinasExpendedoras(0);
+                    o3.setNombre("");
                     o3.setSalaConferencias(false);
                     cout<<"La oficina 3 ha sido eliminada"<<endl;
             }
@@ -565,7 +622,7 @@ int main(){
         }         
         
         //Salir programa
-        else if (op==4)
+        else if (op==5)
         {
             cout<<"Gracias por usar el sistema"<<endl;
             break;
